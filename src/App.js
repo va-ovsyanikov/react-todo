@@ -68,8 +68,12 @@ function App() {
 
   const handleItemDelete = (index) => {
     const newItem = [...state];
-    const del = newItem.filter((_, i) => i !== index);
-    setState(del);
+    if(window.confirm('Вы действительно хотите удалить задачу?')){
+      const del = newItem.filter((_, i) => i !== index);
+      setState(del);
+    }
+    
+  
   };
 
   return (
